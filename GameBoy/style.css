@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Pretendo";
+  src: 
+    url("/fonts/Pretendo.woff2") format("woff2"),
+    url("/fonts/Pretendo.woff") format("woff"),
+    url("fonts/Pretendo.ttf") format("trutype");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: 
+    url("./public/fonts/Lato-Bold.ttf") format("woff2");
+}
+
+:root{
+
+}
+
+body{
+  margin: 0;
+  background-color: #225;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+  margin-left: 0em;
+}
+
