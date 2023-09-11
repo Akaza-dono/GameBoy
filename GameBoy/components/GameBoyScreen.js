@@ -8,14 +8,25 @@ class GameBoyScreen extends HTMLElement{
     static get styles(){
         return `
             :host{
-              --width: 220px;
-              --height: 200px;
+              --width: 210px;
+              --height: 185px;
             }
 
             .container{
                 background-color: #9ca04c;
                 height: var(--height);
                 width: var(--width);
+
+                box-shadow: 
+                    5px 5px 10px #0005 inset,
+                    -2px -1px 10px #0005 inset,
+                    0 0 4px 3px #aaa4;
+
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                overflow: hidden;
+
             }
         `
     }

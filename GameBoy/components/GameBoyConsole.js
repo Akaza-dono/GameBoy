@@ -1,5 +1,6 @@
 import './GameBoyTop.js'
 import './GameBoyCrystal.js'
+import './GameboyCross.js'
 
 class GameboyConsole extends HTMLElement{
 
@@ -26,6 +27,7 @@ class GameboyConsole extends HTMLElement{
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                position: relative;
             }
 
             .screen-container{
@@ -41,7 +43,9 @@ class GameboyConsole extends HTMLElement{
 
             .controls-container{
                 height: 275px;
-                background: #443; 
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             .brand{
@@ -69,6 +73,51 @@ class GameboyConsole extends HTMLElement{
                 font-style: italic;
             }
 
+            .controls-container{
+                height: 275px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .controls{
+                height: 140px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+
+            .controls gameboy-cross{
+                width: 130px;
+                height: 130px;
+            }
+
+            .controls .buttons{
+                width: 130px;
+                height: 130px;
+            }
+
+            gameboy-speaker{
+                height: 90px;
+                position: absolute;
+                bottom: 0;
+                background: blue;
+                width:130px;
+                right: 0;
+                display: none;
+            }
+
+            .option-buttons{
+                height: 70px;
+                width: 130px;
+            }
+
+            .bottom{
+                position:absolute;
+                bottom: 0;
+            }
         `
     }
 
@@ -89,7 +138,24 @@ class GameboyConsole extends HTMLElement{
                         <sub>™</sub>
                     </div>
                 </div>
-                <div class="controls-container"></div>
+                <div class="controls-container">
+                    <div class="controls">
+                        <gameboy-cross></gameboy-cross>
+                        <div class="buttons">
+                            <gameboy-button name="B"></gameboy-button>
+                            <gameboy-button name="A"></gameboy-button>
+                        </div>
+                    </div>
+                    <gameboy-speaker></gameboy-speaker>
+                    <div class="option-buttons">
+                        <gameboy-option-button name="SELECT"></gameboy-option-button>
+                        <gameboy-option-button name="START"></gameboy-option-button>
+                    </div>
+                    <div class="bottom">
+                        <div class="phones">PHONES</div>
+                        <div class="slot"></div>
+                    </div>
+                </div>
             </div>
         `
     }
