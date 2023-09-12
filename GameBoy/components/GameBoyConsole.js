@@ -1,6 +1,6 @@
 import './GameBoyTop.js'
 import './GameBoyCrystal.js'
-import './GameboyCross.js'
+import './GameBoyCross.js'
 
 class GameboyConsole extends HTMLElement{
 
