@@ -8,14 +8,20 @@ class GameboyCross extends HTMLElement{
     static get styles(){
         return `
             :host{
-                --size: 130px;
+                --size: 120px;
+                --large: 85px;          
+                --short: 24px;
+                --dark-color: #060206;
             }
 
             .container{
+                margin: 5px;
                 width: var(--size);
                 height: var(--size);
                 background: #cbc5cd;
-                background-image: conic-gradient(transparent 20%,#bdbac2 40%, transparent 60%, #dbd4de 80%, #ccc3cf 100%);
+                background-image: 
+                    radial-gradient(#0003 1%, transparent),
+                    linear-gradient(50deg, #E1DEEA 10%, #D9D2D5 90%);
                 border-radius: 50%;
                 position: relative;
                 display: flex;
@@ -24,12 +30,11 @@ class GameboyCross extends HTMLElement{
             } 
              
             .axis{
-                --large: 85px;          
-                --short: 25px;
-
-                background: #060206;
+                background: var(--dark-color);
                 border-radius: 2px;
                 box-shadow: 0 0 1px 4px #000;
+                display: flex;
+                justify-content: space-between; 
             }
             
             .axis.x{
@@ -46,6 +51,55 @@ class GameboyCross extends HTMLElement{
                 position: absolute;
                 border: 2px solid #363439;
                 border-top: 3px solid #b7bec8;
+                flex-direction: column;
+            }
+
+            .axis.y .group{
+                transform:rotate(90deg);
+                padding: 2px 1px;
+            }
+
+            .axis.x .group{
+                padding: 2px 1px;
+            }
+
+            .axis .group{
+                width: calc(var(--short) + 0px);
+                height: calc(var(--short) - 4px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0 3px;
+            }
+
+            .axis .group .band{
+                width: 10px;
+                height: 100%;
+                background: #181818;
+                border-radius: 5px;
+                margin: 0 2px;
+            }
+
+
+            .center{
+                width: calc(var(--short) + 5px);
+                height: calc(var(--short) + 5px);
+                background: var(--dark-color);
+                position:absolute;
+            }
+
+            .center .gap{
+                width:80%;
+                height: 80%;
+                margin: auto;
+                margin-top: 10%;
+                background: conic-gradient(
+                    #DDE8F7 0 2%, 
+                    transparent 10% 35%, 
+                    #DDE8F7 50%, 
+                    transparent 65% 90%,
+                    #DDE8F777 99%);
+                border-radius: 50%;
             }
         `
     }
@@ -58,8 +112,33 @@ class GameboyCross extends HTMLElement{
         this.shadowRoot.innerHTML = `
             <style>${GameboyCross.styles}</style></div>
             <div class="container">
-                <div class="x axis"></div>
-                <div class="y axis"></div>
+                <div class="x axis">
+                    <div class="group">
+                        <div class="band"></div>
+                        <div class="band"></div>
+                        <div class="band"></div>
+                    </div>
+                    <div class="group">
+                        <div class="band"></div>
+                        <div class="band"></div>
+                        <div class="band"></div>
+                    </div>
+                </div>
+                <div class="y axis">
+                    <div class="group">
+                        <div class="band"></div>
+                        <div class="band"></div>
+                        <div class="band"></div>
+                    </div>
+                    <div class="group">
+                        <div class="band"></div>
+                        <div class="band"></div>
+                        <div class="band"></div>
+                    </div>
+                </div>
+                <div class="center">
+                    <div class="gap"></div>
+                </div>
             </div>
         `
     }
