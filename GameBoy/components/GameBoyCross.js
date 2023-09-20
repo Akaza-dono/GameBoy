@@ -63,6 +63,36 @@ class GameboyCross extends HTMLElement{
                 padding: 2px 1px;
             }
 
+            .axis::before,
+            .axis::after{
+                content: "";
+                display: block;
+                background: #eee;
+                filter: drop-shadow(2px 5px 1px red)
+                        drop-shadow(-2px -5px 4px blue);
+                width: 6px; 
+                height: 6px;
+                clip-path: polygon(0 0, 50% 100%, 100% 0);
+            }
+
+            .axis.x::before,
+            .axis.x::after {
+                --x: 0;
+                transform: translate(var(--x), 8px) rotate(var(--rotate));
+            }
+
+            .axis.x::before{ --x: -14px; --rotate: 90deg; }
+            .axis.x::after{ --x: 14px; --rotate: -90deg }
+            
+            .axis.y::before,
+            .axis.y::after {
+                --y: 0;
+                transform: translate(8px,var(--y)) rotate(var(--rotate));
+            }
+
+            .axis.y::before{ --y: -14px; --rotate: 180deg; }
+            .axis.y::after{ --y: 14px; --rotate: 0deg }
+
             .axis .group{
                 width: calc(var(--short) + 0px);
                 height: calc(var(--short) - 4px);
