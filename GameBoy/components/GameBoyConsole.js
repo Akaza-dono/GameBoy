@@ -1,6 +1,8 @@
 import './GameBoyTop.js'
 import './GameBoyCrystal.js'
 import './GameBoyCross.js'
+import './GameBoyButton.js'
+
 
 class GameboyConsole extends HTMLElement{
 
@@ -85,7 +87,7 @@ class GameboyConsole extends HTMLElement{
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
-                padding: 0 10px;
+                padding: 0 20px 0 18px;
                 box-sizing: border-box;
             }
 
@@ -96,7 +98,15 @@ class GameboyConsole extends HTMLElement{
 
             .controls .buttons{
                 width: 130px;
-                height: 130px;
+                height: 60px;
+                background: linear-gradient(28DEG, #EFF2F0, #AE9FA6);
+                box-shadow: 0 0 4PX 2PX #CCC;
+                border-radius: 40px;
+                transform: translateY(30px) rotate(-25deg);
+                display: flex;
+                justify-content: space-between;
+                padding: 6px;
+                box-sizing: border-box;
             }
 
             gameboy-speaker{

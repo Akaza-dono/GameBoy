@@ -3,17 +3,13 @@
   src: 
     url("/fonts/Pretendo.woff2") format("woff2"),
     url("/fonts/Pretendo.woff") format("woff"),
-    url("fonts/Pretendo.ttf") format("trutype");
+    url("/fonts/Pretendo.ttf") format("trutype");
 }
 
 @font-face {
   font-family: "Lato";
   src: 
-    url("./public/fonts/Lato-Bold.ttf") format("woff2");
-}
-
-:root{
-
+    url("./fonts/Lato-Bold.ttf") format("woff2");
 }
 
 body{
