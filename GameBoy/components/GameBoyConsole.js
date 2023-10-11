@@ -2,6 +2,7 @@ import './GameBoyTop.js'
 import './GameBoyCrystal.js'
 import './GameBoyCross.js'
 import './GameBoyButton.js'
+import './GameBoyOptionButtons.js'
 
 
 class GameboyConsole extends HTMLElement{
@@ -97,7 +98,7 @@ class GameboyConsole extends HTMLElement{
             }
 
             .controls .buttons{
-                width: 130px;
+                width: 135px;
                 height: 60px;
                 background: linear-gradient(28DEG, #EFF2F0, #AE9FA6);
                 box-shadow: 0 0 4PX 2PX #CCC;
@@ -105,7 +106,7 @@ class GameboyConsole extends HTMLElement{
                 transform: translateY(30px) rotate(-25deg);
                 display: flex;
                 justify-content: space-between;
-                padding: 6px;
+                padding: 10px;
                 box-sizing: border-box;
             }
 
@@ -120,8 +121,12 @@ class GameboyConsole extends HTMLElement{
             }
 
             .option-buttons{
-                height: 70px;
+                height: 55px;
                 width: 130px;
+                display: flex;
+                transform: translateY(20px);
+                
+
             }
 
             .bottom{
